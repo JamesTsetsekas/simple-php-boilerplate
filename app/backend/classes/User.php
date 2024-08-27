@@ -116,20 +116,17 @@ class User
         return false;
     }
 
-    public function hasPermission($key)
-    {
+    public function hasPermission($key) {
+        // Fetch the user's group
         $group = $this->_db->get('groups', array('gid', '=', $this->data()->groups));
-
-        if  ($group->count())
-        {
+        if ($group->count()) {
+            // Decode the permissions JSON
             $permissions = json_decode($group->first()->permissions, true);
-
-            if ($permissions[$key] == true)
-            {
+            // Check if the permission key exists and is true
+            if (isset($permissions[$key]) && $permissions[$key] == 1) {
                 return true;
             }
         }
-
         return false;
     }
 

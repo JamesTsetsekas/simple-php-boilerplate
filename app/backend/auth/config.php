@@ -3,14 +3,14 @@
 $GLOBALS['config'] = array(
 
     'app' => array(
-        'name'          => 'AppName',
+        'name'          => 'WebApp',
     ),
 
     'mysql' => array(
         'host'          => '127.0.0.1',
         'username'      => 'root',
         'password'      => '',
-        'db_name'        => 'php_boilerplate'
+        'db_name'        => 'simple-php-boilerplate'
     ),
 
     'password' => array(
